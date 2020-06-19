@@ -49,4 +49,9 @@ export class UserEditComponent implements OnInit {
     );
   }
 
+  //CAPTURAR LA IMAGEN DEL USUARIO
+  captureImage(files: FileList){
+    this.user.image = files.item(0);
+  }
+
 }

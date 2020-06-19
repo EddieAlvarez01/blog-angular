@@ -9,7 +9,7 @@ export class User{
         public password?: string,
         public password_confirmation?: string,
         public description?: string,
-        public image?: string
+        public image?: string | File
     ){}
 
 }

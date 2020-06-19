@@ -47,8 +47,8 @@
             <textarea name="description" class="form-control" #description [froalaEditor]="options" [(froalaModel)]="user.description"></textarea>
         </div>
         <div class="form-group">
-            <label for="avatar">Imagen:</label>
-            <input type="file" name="avatar" class="form-control">
+            <label for="file0">Imagen:</label>
+            <input type="file" name="file0" class="form-control" (change)="captureImage($event.target.files)">
         </div>
         <input type="submit" value="Guardar cambios" class="btn btn-success" [disabled]="userEditForm.invalid">
     </form>

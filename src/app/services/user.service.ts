@@ -34,6 +34,7 @@ export class UserService {
     formData.append('surname', user.surname);
     formData.append('email', user.email);
     formData.append('description', user.description);
+    formData.append('image', user.image);
     return this.http.post(global.url + 'user/update?_method=PUT', formData, global.auth);
   }
 
