@@ -6,5 +6,12 @@ export const global = {
         headers: new HttpHeaders({
           'Authorization': localStorage.getItem('token')  
         })
-    }
+    },
+    options: {    //OPCIONES DEL EDITOR DE FROALA
+      charCounterCount: true,
+      toolbarButtons: ['bold', 'italic', 'underline', 'fontSize', 'fontFamily'],
+      toolbarButtonsXS: ['bold', 'italic', 'underline', 'fontSize', 'fontFamily'],
+      toolbarButtonsSM: ['bold', 'italic', 'underline', 'fontSize', 'fontFamily'],
+      toolbarButtonsMD: ['bold', 'italic', 'underline', 'fontSize', 'fontFamily']
+    } 
 }

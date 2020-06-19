@@ -3,10 +3,10 @@
     <p >Modifica tus datos</p>
     <hr>
     <div class="alert alert-success" *ngIf="status == 'success'">
-        El registro se ha completado exitosamente <a routerLink="/login">Inicia sesión aqui</a>
+        Datos guardados correctamente
     </div>
     <div class="alert alert-danger" *ngIf="status == 'failed'">
-        Error al registrar el usuario
+        Error al guardar cambios
     </div>
 
     <!-- FORMULARIO DE AJUSTES -->
@@ -44,7 +44,7 @@
         </div>
         <div class="form-group">
             <label for="description">Descripción:</label>
-            <textarea name="description" class="form-control" #description="ngModel" [(ngModel)]="user.description"></textarea>
+            <textarea name="description" class="form-control" #description [froalaEditor]="options" [(froalaModel)]="user.description"></textarea>
         </div>
         <div class="form-group">
             <label for="avatar">Imagen:</label>

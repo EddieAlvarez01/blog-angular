@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/User';
 import { UserService } from 'src/app/services/user.service';
 import { NgForm } from '@angular/forms';
+import { global } from 'src/app/services/global';
 
 @Component({
   selector: 'app-user-edit',
@@ -14,6 +15,9 @@ export class UserEditComponent implements OnInit {
   public user: User;
   public errorsValidationLaravel: any;
   public status: string;
+
+  //OPCIONES DE FROALA
+  public options: Object = global.options;
 
   constructor(
     private _userService: UserService
