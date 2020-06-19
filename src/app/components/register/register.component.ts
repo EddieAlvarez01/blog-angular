@@ -31,7 +31,6 @@ export class RegisterComponent implements OnInit {
       this.errorsValidationLaravel = null;
       this.userService.register(this.user).subscribe(   //CONSUMIR API
         res => {
-          console.log(res);
           this.status = 'success';
           form.reset();
         },
