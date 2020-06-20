@@ -12,6 +12,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { CreateCategoryComponent } from './components/create-category/create-category.component';
+import { CreatePostComponent } from './components/create-post/create-post.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     RegisterComponent,
     HomeComponent,
     ErrorComponent,
-    UserEditComponent
+    UserEditComponent,
+    CreateCategoryComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,

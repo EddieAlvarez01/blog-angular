@@ -7,6 +7,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { CreateCategoryComponent } from './components/create-category/create-category.component';
 
 //RUTAS
 const appRoutes: Routes = [
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
     {path: 'logout/:sure', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
     {path: 'settings', component: UserEditComponent},
+    {path: 'create-category', component: CreateCategoryComponent},
     {path: '**', component: ErrorComponent}     //404  
 ];
 

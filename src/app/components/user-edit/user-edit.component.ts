@@ -15,6 +15,7 @@ export class UserEditComponent implements OnInit {
   public user: User;
   public errorsValidationLaravel: any;
   public status: string;
+  public url: string = global.url;
 
   //OPCIONES DE FROALA
   public options: Object = global.options;

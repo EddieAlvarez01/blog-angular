@@ -1,0 +1,26 @@
+<div class="col-md-12 mt-3">
+    <h1>{{ page_title }}</h1>
+    <p *ngIf="status == null">Crea una nueva categoría para el blog</p>
+    <hr>
+    <div class="alert alert-success" *ngIf="status == 'success'">
+        Datos guardados correctamente
+    </div>
+    <div class="alert alert-danger" *ngIf="status == 'failed'">
+        Error al guardar cambios
+    </div>
+
+    <!-- FORMULARIO DE NUEVA CATEGORIA -->
+    <form #categoryForm="ngForm" (ngSubmit)="categoryForm.valid && onSubmit(categoryForm)" class="col-md-5">
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="category.name" required autocomplete="off">
+            <small *ngIf="name.invalid && name.touched" class="invalid-feedback d-block">
+                El nombre de la categoría es requerido
+            </small>
+        </div>
+        <input type="submit" value="Guardar" class="btn btn-success" [disabled]="categoryForm.invalid">
+    </form>
+
+
+</div>
+
