@@ -1,4 +1,5 @@
 import { HttpHeaders } from '@angular/common/http';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 export const global = {
     url: 'http://api-rest-blog.com.devel/',             //URL DE LA API
@@ -7,11 +8,8 @@ export const global = {
           'Authorization': localStorage.getItem('token')  
         })
     },
-    options: {    //OPCIONES DEL EDITOR DE FROALA
-      charCounterCount: true,
-      toolbarButtons: ['bold', 'italic', 'underline', 'fontSize', 'fontFamily'],
-      toolbarButtonsXS: ['bold', 'italic', 'underline', 'fontSize', 'fontFamily'],
-      toolbarButtonsSM: ['bold', 'italic', 'underline', 'fontSize', 'fontFamily'],
-      toolbarButtonsMD: ['bold', 'italic', 'underline', 'fontSize', 'fontFamily']
-    } 
+    options: {    //OPCIONES DEL EDITOR DE TEXTO
+      toolbar:['bold', 'italic', 'link', 'numberedList', 'indent', 'blockQuote']
+    },
+    editor: ClassicEditor   //EDITOR DE TEXTO CLASICO
 }

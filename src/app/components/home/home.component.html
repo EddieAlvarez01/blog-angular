@@ -1,1 +1,25 @@
-<p>home works!</p>
+
+<div class="loading" *ngIf="!posts">
+    Cargando...
+</div>
+<div class="container-fluid mt-3" *ngIf="posts">
+    <h1>{{ page_title }}</h1>
+    <hr>
+    <div class="card-columns">
+        <article class="card w-100" *ngFor="let post of posts">
+            <div class="card-header">
+                <h3>
+                    <a routerLink="/home">{{ post.title }}</a>
+                </h3>
+            </div>
+            <div class="card-boddy">
+                <img src="{{ url + 'post-resources/get-image/' + post.image }}" class="w-100">
+                <div class="post-buttons mt-3">
+                    <a routerLink="/home" class="btn btn-success mr-2">Leer</a>
+                    <a routerLink="/home" *ngIf="user && user.id == post.user_id" class="btn btn-warning mr-2">Editar</a>
+                    <a routerLink="/home" *ngIf="user && user.id == post.user_id" class="btn btn-danger">Eliminar</a>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>

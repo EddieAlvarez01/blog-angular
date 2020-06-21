@@ -16,9 +16,8 @@ export class UserEditComponent implements OnInit {
   public errorsValidationLaravel: any;
   public status: string;
   public url: string = global.url;
-
-  //OPCIONES DE FROALA
-  public options: Object = global.options;
+  public editor = global.editor;    //EDITOR DE TEXTAREA
+  public config = global.options;   //CONFIURACION DEL EDITOR
 
   constructor(
     private _userService: UserService

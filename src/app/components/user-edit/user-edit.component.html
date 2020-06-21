@@ -44,7 +44,7 @@
         </div>
         <div class="form-group">
             <label for="description">Descripción:</label>
-            <textarea name="description" class="form-control" #description [froalaEditor]="options" [(froalaModel)]="user.description"></textarea>
+            <ckeditor [editor]="editor" [(ngModel)]="user.description" name="description" [config]="config"></ckeditor>
         </div>
         <div class="form-group">
             <label for="file0">Imagen:</label>

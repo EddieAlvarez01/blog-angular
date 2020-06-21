@@ -1,1 +1,37 @@
-<p>create-post works!</p>
+<div class="col-md-12 mt-3">
+    <h1>{{ page_title }}</h1>
+    <p *ngIf="status == null">Crea un nuevo post en el blog</p>
+    <hr>
+    <div class="alert alert-success" *ngIf="status == 'success'">
+        Datos guardados correctamente
+    </div>
+    <div class="alert alert-danger" *ngIf="status == 'failed'">
+        Error al crear el post
+    </div>
+
+    <!-- FORMULARIO DE AJUSTES -->
+    <form class="col-md-5 ml-0 pl-0" #postForm="ngForm" (ngSubmit)="postForm.valid && onSubmit(postForm)">
+        <div class="form-group">
+            <label for="tile">Título:</label>
+            <input type="text" name="title" class="form-control" #title="ngModel" [(ngModel)]="post.title" required>
+            <small *ngIf="title.invalid && title.touched" class="invalid-feedback d-block">
+                El título es requerido
+            </small>
+        </div>
+        <div class="form-group">
+            <label for="content">Contenido:</label>
+            <ckeditor [editor]="editor" [(ngModel)]="post.content" name="content" [config]="config"></ckeditor>
+        </div>
+        <div class="form-group">
+            <label for="category">Categoría:</label>
+            <select name="category" class="form-control" #category="ngModel" [(ngModel)]="post.category">
+                <option *ngFor="let category of categories" value="{{ category.id }}">{{ category.name }}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="image">Imagen del post:</label>
+            <input name="image" class="form-control" type="file" (change)="captureImage($event.target.files)">
+        </div>
+        <input type="submit" class="btn btn-success" value="Crear post" [disabled]="postForm.invalid">
+    </form>
+</div>

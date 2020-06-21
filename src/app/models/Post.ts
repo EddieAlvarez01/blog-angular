@@ -6,7 +6,7 @@ export class Post{
         public category: string | number,
         public title: string,
         public content: string,
-        public image: string,
+        public image: string | File,
         public created_at: any
     ){}
 
