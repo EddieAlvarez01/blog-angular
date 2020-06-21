@@ -13,6 +13,8 @@ import { ErrorComponent } from './components/error/error.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { CreateCategoryComponent } from './components/create-category/create-category.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { EditPostComponent } from './components/edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CreatePostComponent } from './components/create-post/create-post.compon
     ErrorComponent,
     UserEditComponent,
     CreateCategoryComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    PostDetailComponent,
+    EditPostComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,9 @@ import { ErrorComponent } from './components/error/error.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { CreateCategoryComponent } from './components/create-category/create-category.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
-
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { EditPostComponent } from './components/edit-post/edit-post.component';
+ 
 //RUTAS
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -20,6 +22,8 @@ const appRoutes: Routes = [
     {path: 'settings', component: UserEditComponent},
     {path: 'create-category', component: CreateCategoryComponent},
     {path: 'create-post', component: CreatePostComponent},
+    {path: 'get-post/:id', component: PostDetailComponent},
+    {path: 'edit-post/:id', component: EditPostComponent},
     {path: '**', component: ErrorComponent}     //404  
 ];
 

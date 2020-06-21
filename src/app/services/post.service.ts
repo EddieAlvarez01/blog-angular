@@ -30,4 +30,21 @@ export class PostService {
     return this.http.get(global.url + 'post');
   }
 
+  //TRAER DETALLES DE UN POST DETERMINADO
+  getPostById(id: number): Observable<any>{
+    return this.http.get(global.url + 'post/' + id);
+  }
+
+  //EDITAR UN POST
+  update(post: any): Observable<any>{
+    let formData = new FormData();
+    formData.append('title', post.title);
+    formData.append('content', post.content);
+    formData.append('category_id', post.category_id.toString());
+    if(typeof(post.image) != 'string'){
+      formData.append('image', post.image);
+    }
+    return this.http.post(global.url + 'post/' + post.id + '?_method=PUT', formData, global.auth);
+  }
+
 }
