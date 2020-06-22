@@ -5,6 +5,7 @@ import { CategoryService } from 'src/app/services/category.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
 import { global } from 'src/app/services/global';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-edit-post',
@@ -24,7 +25,8 @@ export class EditPostComponent implements OnInit {
     private _categoryService: CategoryService,
     private _route: ActivatedRoute,
     private _router: Router,
-    private _postService: PostService
+    private _postService: PostService,
+    private _userService: UserService
   ) {
     this.page_title = 'Editar post';
    }
@@ -55,6 +57,10 @@ export class EditPostComponent implements OnInit {
     this._postService.getPostById(id).subscribe(
       res => {
         this.post = res.post;
+        let user = this._userService.getUser();
+        if(user.id != this.post.user_id){
+          this._router.navigate(['/home']);
+        }
       },
       error => {
         console.log(error);
