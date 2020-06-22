@@ -47,4 +47,9 @@ export class PostService {
     return this.http.post(global.url + 'post/' + post.id + '?_method=PUT', formData, global.auth);
   }
 
+  //BORRAR UN POST
+  delete(id: number): Observable<any>{
+    return this.http.delete(global.url + 'post/' + id, global.auth);
+  }
+
 }
