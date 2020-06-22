@@ -23,4 +23,9 @@ export class CategoryService {
     return this.http.get(global.url + 'category');
   }
 
+  //TRAER UNA CATEGORIA
+  getCategoryById(id: number): Observable<any>{
+    return this.http.get(global.url + 'category/' + id);
+  }
+
 }

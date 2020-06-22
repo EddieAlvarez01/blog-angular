@@ -52,4 +52,9 @@ export class PostService {
     return this.http.delete(global.url + 'post/' + id, global.auth);
   }
 
+  //TRAER POSTS POR CATEGORIA
+  getPostsByCategory(id: number): Observable<any>{
+    return this.http.get(global.url + 'post-resources/get-post-category/' + id);
+  }
+
 }

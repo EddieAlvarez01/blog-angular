@@ -11,6 +11,7 @@ import { CreateCategoryComponent } from './components/create-category/create-cat
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { EditPostComponent } from './components/edit-post/edit-post.component';
+import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
  
 //RUTAS
 const appRoutes: Routes = [
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
     {path: 'create-post', component: CreatePostComponent},
     {path: 'get-post/:id', component: PostDetailComponent},
     {path: 'edit-post/:id', component: EditPostComponent},
+    {path: 'category-detail/:id', component: CategoryDetailComponent},
     {path: '**', component: ErrorComponent}     //404  
 ];
 

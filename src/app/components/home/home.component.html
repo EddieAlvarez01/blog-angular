@@ -2,7 +2,13 @@
 <div class="loading" *ngIf="!posts">
     Cargando...
 </div>
-<div class="container-fluid mt-3" *ngIf="posts">
+
+<!-- ALERTA, NO HAY POST DISPONIBLES -->
+<div class="alert alert-warning" *ngIf="posts && posts.length == 0">
+    No hay posts disponibles
+</div>
+
+<div class="container-fluid mt-3" *ngIf="posts && posts.length > 0">
     <h1>{{ page_title }}</h1>
     <hr>
     <div class="card-columns">

@@ -15,6 +15,7 @@ import { CreateCategoryComponent } from './components/create-category/create-cat
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { EditPostComponent } from './components/edit-post/edit-post.component';
+import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { EditPostComponent } from './components/edit-post/edit-post.component';
     CreateCategoryComponent,
     CreatePostComponent,
     PostDetailComponent,
-    EditPostComponent
+    EditPostComponent,
+    CategoryDetailComponent
   ],
   imports: [
     BrowserModule,
