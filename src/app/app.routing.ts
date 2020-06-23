@@ -14,6 +14,7 @@ import { EditPostComponent } from './components/edit-post/edit-post.component';
 import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
 import { IdentityGuard } from './services/identity.guard';
 import { AuthGuard } from './services/auth.guard';
+import { ProfileComponent } from './components/profile/profile.component';
  
 //RUTAS
 const appRoutes: Routes = [
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
     {path: 'get-post/:id', component: PostDetailComponent},
     {path: 'edit-post/:id', component: EditPostComponent, canActivate: [IdentityGuard]},
     {path: 'category-detail/:id', component: CategoryDetailComponent},
+    {path: 'profile/:id', component: ProfileComponent},
     {path: '**', component: ErrorComponent}     //404  
 ];
 

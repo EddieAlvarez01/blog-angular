@@ -57,4 +57,9 @@ export class PostService {
     return this.http.get(global.url + 'post-resources/get-post-category/' + id);
   }
 
+  //TAER POSTS POR USUARIO
+  getPostByUser(id: number): Observable<any>{
+    return this.http.get(global.url + 'post-resources/get-post-user/' + id);
+  }
+
 }

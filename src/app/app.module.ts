@@ -16,6 +16,7 @@ import { CreatePostComponent } from './components/create-post/create-post.compon
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { EditPostComponent } from './components/edit-post/edit-post.component';
 import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CategoryDetailComponent } from './components/category-detail/category-d
     CreatePostComponent,
     PostDetailComponent,
     EditPostComponent,
-    CategoryDetailComponent
+    CategoryDetailComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

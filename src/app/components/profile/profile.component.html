@@ -1,0 +1,52 @@
+
+<div class="loading" *ngIf="!posts">
+    Cargando...
+</div>
+
+<!-- ALERTA, NO HAY POST DISPONIBLES -->
+<div class="alert alert-warning" *ngIf="posts && posts.length == 0">
+    No hay posts disponibles
+</div>
+
+<div class="container-fluid mt-3" *ngIf="posts && posts.length > 0">
+    <h1>Perfil de {{ user.name + ' ' + user.surname }}</h1>
+    <p [innerHtml]="user.description"></p>
+    <div class="card-columns">
+        <article class="card w-100" *ngFor="let post of posts; index as i">
+            <div class="card-header">
+                <h3>
+                    <a routerLink="/get-post/{{ post.id }}">{{ post.title }}</a>
+                </h3>
+            </div>
+            <div class="card-boddy">
+                <img src="{{ url + 'post-resources/get-image/' + post.image }}" class="w-100">
+                <div class="post-buttons mt-3">
+                    <a routerLink="/get-post/{{ post.id }}" class="btn btn-success mr-2">Leer</a>
+                    <a routerLink="/edit-post/{{ post.id }}" *ngIf="user && user.id == post.user_id" class="btn btn-warning mr-2">Editar</a>
+                    <button type="button" *ngIf="user && user.id == post.user_id" data-toggle="modal" [attr.data-target]="'#modal' + post.id" class="btn btn-danger">Eliminar</button>
+                </div>
+            </div>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="modal{{ post.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Eliminar un post</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        ¿Estas seguro que deseas eliminar el post?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="deletePost(post.id, i)" >Si</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>

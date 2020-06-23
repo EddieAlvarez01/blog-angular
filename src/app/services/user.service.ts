@@ -50,4 +50,9 @@ export class UserService {
     return null;
   }
 
+  //TRAER INFORMACIÓN DE UN USUARIO
+  getUserInfo(id: number): Observable<any>{
+    return this.http.get(global.url + 'user/get-user/' + id);
+  }
+
 }
