@@ -50,4 +50,16 @@ export class ProfileComponent implements OnInit {
       }
     );
   }
+
+  //Borrar post
+  deletePost(id: number, index: number){
+    this._postService.delete(id).subscribe(
+      res => {
+        this.posts.splice(index, 1);
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
 }
